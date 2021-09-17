@@ -1,0 +1,161 @@
+﻿l_english:
+ 
+ #Made for Flavor Universalis by Big Boss#
+ 
+ #|Missions made by Big Boss for Flavor Universalis|#
+ 
+ dtt_otterndorf_strife_title: "Otterndorf Strife"
+ dtt_otterndorf_strife_desc: " "
+ dtt_bishop_needle_title: "The Bishop's Needle"
+ dtt_bishop_needle_desc: " " 
+ dtt_land_reclamation_title: "Land Reclamation"
+ dtt_land_reclamation_desc: " " 
+ dtt_enlist_likedeelers_title: "Enlist the Likedeelers"
+ dtt_enlist_likedeelers_desc: " " 
+ 
+ #2
+ dtt_repel_black_guard_title: "Repel the Black Guard" 
+ dtt_repel_black_guard_desc: " " 
+ dtt_great_peasant_war_title: "Great Peasants War" 
+ dtt_great_peasant_war_desc: " "
+ dtt_unite_masses_title: "Unite the Masses" 
+ dtt_unite_masses_desc: " "
+ dtt_means_production_title: "The Means of Production" 
+ dtt_means_production_desc: " " 
+ #3
+ dtt_heart_hansa_title: "Heart of the Hansa"
+ dtt_heart_hansa_desc: " "
+ dtt_break_wends_title: "Subjugate the Wends"
+ dtt_break_wends_desc: " "
+ dtt_eider_estuary_title: "Eider Estuary"
+ dtt_eider_estuary_desc: " " 
+ dtt_trade_lubeck_title: "Trade in Lubeck"
+ dtt_trade_lubeck_desc: " " 
+ #4
+ dtt_protect_ppl_title: "Protect the People"
+ dtt_protect_ppl_desc: " " 
+ dtt_break_chains_title: "Break the Chains"
+ dtt_break_chains_desc: " " 
+ dtt_organize_parishes_title: "Organize the Parishes"
+ dtt_organize_parishes_desc: " "
+ #5
+ dtt_battle_hemmingstedt_title: "Battle of Hemmingstedt"
+ dtt_battle_hemmingstedt_desc: " " 
+ dtt_last_feud_title: "The Last Feud"
+ dtt_last_feud_desc: " "
+ dtt_control_sound_toll_title: "Control the Sound Toll"
+ dtt_control_sound_toll_desc: " " 
+ dtt_times_achanging_title: "Times are A-Changing"
+ dtt_times_achanging_desc: "Come gather 'round people \nWherever you roam \nAnd admit that the waters around you have grown \nAnd accept it that soon you'll be drenched to the bone \nIf your time to you is worth savin' \nAnd you better start swimmin' \nOr you'll sink like a stone \nFor the times they are a-changin'" 
+ 
+ 
+ 
+ #|Custom Tooltips made by Big Boss for Flavor Universalis|#
+ 
+ dtt_if_44_owned_by_subject_tt: "If [44.GetName] is owned by a subject:" 
+ dtt_as_long_as_subject_desc: "as long as they remain a subject"
+ dtt_else_tt: "\nElse:"
+ dtt_rise_up_tt: "§MThe peasantry across Europe will rise up against their brutal masters§!"
+ dtt_more_likely_to_spawn_rev_tt: "We will be more likely to spawn a §RCenter of Revolution§! and gain a unique bonus from it"
+ dtt_per_subject_mana_or_1_in_every_category_tt: "\nBased on our number of subjects we gain:"
+ dtt_every_manufactory_2_base_production_tt: "Every owned province with a §YManufactory§! will gain §G2§! Base Production"
+ dtt_if_murican_dream_tt: "If the '§YAmerican Dream§!' DLC is active:" 
+ dtt_lubeck_direct_ownership_tt: "If we control [45.GetName] directly:"
+ dtt_lubeck_owned_by_subject_tt: "\nIf we control [45.GetName] via vassalage:"
+ dtt_new_cb_grant_tt: "\n§MGrants access to the 'Break Feudal Chains' Casus Belli§!"
+ dtt_if_catholic_reward_tt: "If we complete the mission while Catholic:" 
+ dtt_if_reformed_or_protestant_reward_tt: "\nElse:"
+ dtt_ade_advisor_reward: "\nIf §GAdvisors Expanded§! is active we will gain a new advisor with a large discount"
+ dtt_herring_wont_run_out: "By regulating the Herring fishing across the Oresund we will make sure the precious fish never runs out"
+ dtt_stronger_than_monarchy: "We are militarily stronger than any §Ymonarchy§! whose capital is in the §YNorth§! or §YSouth§! German Regions"
+ dtt_won_incident_tt: "Has emerged victorious in the '§YGreat Peasants War§!' Imperial Incident"
+ dtt_naval_mar_50_trad_tt: "If we complete the mission while having §G50§! Navy Tradition and either the 1st §YNaval§! or 3rd §YMaritime§! Idea, the above modifier will be §Gpermanent§!"
+ dtt_monarch_coalition: "§MEvery monarchy in the North German Region will band together and immediately attempt to quell our struggle!§!"
+ dtt_alliance_option: "\nIf we complete the mission via alliance:"
+ dtt_capture_of_the_danish_coat_of_arms_tt: "\nThe capture of the §YDanish Golden Coat of Arms§! will severely weaken the grip of the Danish king on his subjects"
+ dtt_peasants_war_outcome_tt: "Fighting this war will guarantee a victory in the current '§YGreat Peasants War§!' Imperial Incident"
+ #|Modifiers made by Big Boss for Flavor Universalis|#
+ 
+ dtt_liberation_hamburg_modifier: "Liberation of Hamburg"
+ btt_abolition_feudalism_modifier: "Weakened Feudalism"
+ dtt_expanded_urban_infrastructure_modifier: "Expanded Urban Infrastructure"
+ dtt_unyielding_spirit_modifier: "Unyielding Spirit"
+ dtt_rise_of_the_peasants_modifier: "Rise of the Peasantry"
+ dtt_crush_opressors_modifier: "Crush the Opressors"
+ dtt_spread_of_modern_ideas_modifier: "Spread of Modern Ideas" 
+ dtt_centralized_ownership_infrastructure_modifier: "Centralized Ownership of Infrastructure"
+ dtt_peasant_merchants_hansa_modifier: "Favorable Renegotiation of Trade Privileges"
+ dtt_maritime_endeavours_modifier: "Maritime Endeavours"
+ dtt_active_hub_modifier: "Active Trade Hub of the Republic"
+ dtt_naval_affairs_of_the_republic_modifier: "Naval Affairs of the Republic" 
+ dtt_defending_ideals_modifier: "Defending our Ideals"
+ dtt_wars_liberation_modifier: "Wars of Liberation" 
+ dtt_kirchspiele_halls_modifier: "Kirchspiele Halls"
+ dtt_turning_tables_modifier: "Turning the Tables"
+ dtt_trampled_danish_monarchy_modifier: "Trampled the Danish Monarchy"
+ dtt_prosperity_oresund_modifier: "Prosperity in the Oresund"
+ dtt_shield_catholicism_in_the_north_modifier: "Shield of Northern Catholicism"
+ dtt_skanemarket_modifier: "Skåne Market"
+ desc_dtt_skanemarket_modifier: "One of the most important trading fairs in the Baltic Sea, the Skåne Market is where the herring-rich waters around Øresund and Falsterbo-Skanör are bought by merchants from all over Western Europe. The market has also grown over time to be the major entrepôt for any West-European goods destined for Eastern Scandinavia."
+ dtt_weigh_house_bremen_modifier: "Weigh House of Bremen"
+ dtt_cloth_guild_modifier: "Cloth-Traders Guild Hall"
+ dtt_reinforced_defenses_modifier: "Reinforced the City's Defenses"
+ dtt_open_peasant_revolts_modifier: "Open Peasant Revolts" 
+ dtt_class_consciousness_modifier: "Class Consiousness"
+ dtt_guards_of_the_workers_revolution_modifier: "Guards of the Workers' Revolution"
+ dtt_teachings_henry_modifier: "Teachings of Henry"
+ dtt_likedeeler_crews_modifier: "Likedeeler Crews"
+ 
+ 
+ 
+ 
+ #|Events made by Big Boss for Flavor Universalis|#
+ 
+ FU_Dith_Events.1.t: "City of Bremen"
+ FU_Dith_Events.1.d: " "
+ FU_Dith_Events.1.a: "Construct the Weigh House!"
+ FU_Dith_Events.1.b: "The Cloth-Traders' guild hall will thrive in the city."
+ FU_Dith_Events.1.c: "Expand the city's defences, instead."
+ 
+ FU_Dith_Events.2.t: "[GetYear] - The Year of Blood" 
+ FU_Dith_Events.2.d: " "
+ FU_Dith_Events.2.a: "Drum links, zwei, drei!"
+ 
+ FU_Dith_Events.4.t: "Wulf Isebrand"
+ FU_Dith_Events.4.d: " " 
+ FU_Dith_Events.4.a: "A champion to defend the common man!"
+ 
+ FU_Dith_Events.5.t: "The Heated Debate on Peasant Dietary Preferences"
+ FU_Dith_Events.5.d: " " 
+ FU_Dith_Events.5.a: "Surely, milk must follow the cereal."
+ FU_Dith_Events.5.b: "No,milk comes first and aplenty!"
+ FU_Dith_Events.5.c: "Whatever the order, we are one people!"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ #|New CB and Peace Deal Loc made by Big Boss for Flavor Universalis|#
+ 
+ LIBERATE_THE_PEOPLE_WAR_NAME: "War to Liberate the People"
+ ALL_MONARCHIES: "All Minority Oppressive Governments"
+ superiority_dithmarschen_break_chains_desc: "It is time we liberate all people under feudal and oppresive rule!"
+ superiority_dithmarschen_break_chains: "Free the People under Monarchical Rule - Superiority"
+ cb_dithmarschen_break_chains: "Break the Chains"
+ cb_dithmarschen_break_chains_desc: "Workers of the world, unite!"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,107 @@
+﻿l_english:
+#Made by Big Boss for Flavor Universalis#
+
+ #Missions
+ hol_flemish_decline_title: "The Flemish Decline"
+ hol_flemish_decline_desc: " " 
+ hol_great_privilege_title: "The Great Privilege"
+ hol_great_privilege_desc: " " 
+ hol_council_malines_title: "Council of Malines"
+ hol_council_malines_desc: " " 
+ hol_hook_cod_wars_title: "Hook & Cod Wars"
+ hol_hook_cod_wars_desc: " " 
+ hol_overkwartier_van_gelre_title: "Overkwartier van Gelre"
+ hol_overkwartier_van_gelre_desc: " " 
+ hol_proclaim_dutch_republic_title: "Proclaim the Dutch Republic"
+ hol_proclaim_dutch_republic_desc: " "
+ hol_frisian_freedoms_title: "Frisian Freedom"
+ hol_frisian_freedoms_desc: " "
+ hol_all_across_rhine_title: "All Across the Rhine"
+ hol_all_across_rhine_desc: " "
+ hol_outshine_hansa_title: "Outshine the Hansa"
+ hol_outshine_hansa_desc: " " 
+ hol_growth_amsterdam_title: "Growth of Amsterdam"
+ hol_growth_amsterdam_desc: " " 
+ hol_tame_brabantian_lion_title: "Lion of Brabant"
+ hol_tame_brabantian_lion_desc: " " 
+ hol_bulk_fleet_title: "The Bulk Fleets" 
+ hol_bulk_fleet_desc: " " 
+ hol_sea_beggars_title: "Sea Beggars" 
+ hol_sea_beggars_desc: " " 
+ hol_statute_admiralty_title: "Statute of Admiralty" 
+ hol_statute_admiralty_desc: " " 
+ hol_center_economy_title: "Centre of Economy"
+ hol_center_economy_desc: " "
+ hol_new_world_daze_title: "New World Daze"
+ hol_new_world_daze_desc: " " 
+ 
+ 
+ 
+ 
+ 
+ #Modifiers
+ hol_revival_flemish_textile_modifier: "Revival of the Flemish Textile Production"
+ hol_first_constitution_modifier: "First Constitution of the Low Countries" 
+ hol_parliament_of_mechelen_modifier: "Great Council of 24"
+ hol_apiration_for_liberty_modifier: "Aspirations for Liberty" 
+ hol_merchants_prevail_modifier: "Mercantile Rule"
+ hol_nobles_prevail_modifier: "Noble Feudal Rule"
+ hol_unification_of_netherlands_modifier: "Unification of the Netherlands"
+ hol_broke_peasant_state_modifier: "Broke the Peasant State" 
+ rhine_estuary2_modifier: "Rhine Estuary"
+ hol_influx_prosperity_modifier: "Influx of Prosperity"
+ hol_ample_grain_trade_modifier: "Ample Grain Trade"
+ hol_port_of_amsterdam_modifier: "Port of Amsterdam"
+ hol_legitimate_conquest_modifier: "Legitimate Conquest"
+ hol_new_central_trade_network_modifier: "New Central Trade Network"
+ hol_letters_of_marque_modifier: "Letters of Marque"
+ hol_admiralty_holland_modifier: "Admiralty of Holland"
+ hol_centre_international_economy_modifier: "Centre of International Economy"
+ hol_journey_to_new_world_modifier: "Journey to the New World!"
+ hol_ended_wars_gelre_modifier: "Ended the Wars of Gelre"
+ 
+ 
+ 
+ 
+ 
+ #Tooltips
+ hol_industrious_trait_tt: "\nIf possible our ruler will gain the §YIndustrious§! personality trait"
+ until_we_reform_the_constitution_desc: "until we choose to reform our Constitution as @NED Netherlands"
+ until_we_reform_judicial_code_as_ndl_desc: "until we choose to reform our Judicial Code as @NED Netherlands"
+ hol_if_lib_desire_tt: "If we complete the mission with §Y100%§! Liberty Desire:"
+ hol_if_indep_not_at_war_tt: "\nAlternative, if we are independent and not at war:"
+ hol_if_we_havent_burgher_point_tt: "If we do not have the '§YLand of Commerce§!' Privilege, we will gain it without sacrificing §YCrown Land§!"
+ hol_if_we_havent_nobles_privilege_tt: "If we do not have the '§YPrimacy of the Nobility§!' Privilege, we will gain it without sacrificing §YCrown Land§!"
+ hol_rhine_on_steroids_tt: "We will expand on the '§YRhine Estuary§!' by increasing its impact on our trade power"
+ hol_stronger_in_the_region: "Has the largest army or highest prestige than any nation with its capital in the §YLow Countries§! region"
+
+ #Events
+ 
+ FU_Holland_Netherlands_Events.2.t: "The Great Council of the Low Countries"
+ FU_Holland_Netherlands_Events.2.d: " "
+ FU_Holland_Netherlands_Events.2.a: "The Council of State governs all, large and small!"
+ 
+ FU_Holland_Netherlands_Events.3.t: "Settling the Hook & Cod Wars"
+ FU_Holland_Netherlands_Events.3.d: " " 
+ FU_Holland_Netherlands_Events.3.a: "The merchant class is victorious!"
+ FU_Holland_Netherlands_Events.3.b: "We cannot risk our relations with the nobles!"
+ 
+ FU_Holland_Netherlands_Events.4.t: "The Shifting Winds of Trade"
+ FU_Holland_Netherlands_Events.4.d: " "
+ FU_Holland_Netherlands_Events.4.a: "We have finally prevailed!"
+ 
+ FU_Holland_Netherlands_Events.5.t: "Joyous Entry of [GetYear]"
+ FU_Holland_Netherlands_Events.5.d: " " 
+ FU_Holland_Netherlands_Events.5.a: "The region will be united under our glorious flag!"
+ 
+ FU_Holland_Netherlands_Events.6.t: "The Centre of International Economy"
+ FU_Holland_Netherlands_Events.6.d: " " 
+ FU_Holland_Netherlands_Events.6.a: "Money makes the world go 'round!"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
