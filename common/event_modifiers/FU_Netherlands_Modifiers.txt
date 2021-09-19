@@ -266,6 +266,16 @@ ned_spice_must_flow_modifier = {
 ned_secured_flow_malacca_modifier = {
 	placed_merchant_power = 5 
 }
-
+ned_beeldenstorm_modifier = {
+	global_unrest = 5 
+	stability_cost_modifier = 0.25
+}
+ned_VOC_company_with_an_army_modifier = {
+	land_forcelimit_modifier = 0.1
+}
+voc_stable_administration_modifier = {
+	stability_cost_modifier = -0.2
+	global_trade_power = 0.05
+}
 	
 

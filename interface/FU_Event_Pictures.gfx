@@ -449,4 +449,24 @@ spriteTypes = {
 		texturefile = "gfx/event_pictures/fu_rembrandt_eventPicture.dds"
 		allwaystransparent = yes
 	}
+	spriteType = { 
+		name = "fu_willem_eventPicture" 
+		texturefile = "gfx/event_pictures/fu_willem_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = { 
+		name = "fu_antonie_eventPicture" 
+		texturefile = "gfx/event_pictures/fu_antonie_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = { 
+		name = "fu_gurl_eventPicture" 
+		texturefile = "gfx/event_pictures/fu_gurl_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = { 
+		name = "fu_cuisine_hawt_eventPicture" 
+		texturefile = "gfx/event_pictures/fu_cuisine_hawt_eventPicture.dds"
+		allwaystransparent = yes
+	}
 }

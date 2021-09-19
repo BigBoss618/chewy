@@ -190,7 +190,9 @@
     ned_leeuwengracht_groenegracht_steenhouwersgracht_modifier: "Leeuwengracht, Groenegracht, and Steenhouwersgracht"
     ned_spice_must_flow_modifier: "The Spice Shall Flow"
     ned_secured_flow_malacca_modifier: "Secured the Malacca Flow"
-    
+    ned_beeldenstorm_modifier: "Iconoclastic Fury"
+    ned_VOC_company_with_an_army_modifier: "Dutch East Indies Company: A Company with an Army"
+    voc_stable_administration_modifier: "Stable Administration of the VOC" 
     
     #Custom Tooltips 
     ned_merc_if_staple_tt: "If we complete the mission while [87.GetName] has the §YStaple Port§! modifier, we will gain §G2§! Mercantilism"
@@ -199,7 +201,7 @@
     ned_enacted_amsterdam_decision_tt: "Has enacted the '§YLand Reclamation in Holland§!' national decision"
     ned_every_province_in_requirements_tt: "§MEvery province that meets the requirements:§!"
     ned_5_adm_5_dip_per_courthouse_or_state_house_tt: "\nWe will gain §G5§! Administrative and §G5§! Diplomatic Power for every province that has a §YCourthouse§! or §YTownhall§! or §YState House§!"
-    ned_if_french_ally_tt: "§MA French culture group alliance will greatly reduce the Army Professionalism cost of hiring mercenaries and yield the following reward:§!"
+    ned_if_french_ally_tt: "§MA French culture group alliance will yield the following reward:§!\nMercenary Army Professionalism Cost: §G-50%§! \nas well as the following reward:§!"
     until_we_reform_our_army_desc: "until we reform our armed forces"
     ned_eng_ally_tt: "§MA British culture group alliance yield the following reward:§!"
     ned_germanic_ally_tt: "§MA Germanic culture group alliance yield the following reward:§!"
@@ -257,10 +259,15 @@
     ned_test_act_tt: "Has enacted the '§YPass Test Act§!' national decision"
     ned_if_has_decleration_tt: "If we complete the mission via '§YPass Declaration of Indulgence Act§!':" 
     ned_if_test_act_tt: "If we complete the mission via '§YPass Test Act§!':" 
-    ned_enable_various_events_about_culture_tt: "Enables various events about culture in the Low Countries during your campaign"
+    ned_enable_various_events_about_culture_tt: "§OEnables various events about culture in the Low Countries during your campaign§!"
     ned_dutch_bookmarket_key: "Dutch Book Market"
     ned_every_cot_in_2_regions_tt: "Every province in the §GIndonesia§! or §GMalaya Regions§! that fulfill the requirements:"
     ned_owner_of_667_gets_an_offer_for_it_tt: "The owner of [667.GetName] will receive an offer to sell the province"
+    ned_every_paper_province_1_production: "Every owned §YEuropean§! province that produces §YPaper§! will gain §G1§! Base Production"
+    until_we_complete_the_beeldenstorm_mission_desc: "until we complete the '§YPast the Beeldenstorm§!' mission"
+    ned_no_rewards_tt: "We will complete the missions without gaining the reward, in an effort to avoid compromising our relationship with the owner of the §YNormandy§! and §YPicardy§! areas"
+    ned_beeldenstorm_event_tt: "Has had the '§YBeeldenstorm§!' event"
+    
     #Events
     
     FU_Holland_Netherlands_Events.7.t: "Fate of the Normans" 
@@ -343,6 +350,62 @@
     FU_Holland_Netherlands_Events.25.d: " " 
     FU_Holland_Netherlands_Events.25.a: "A room without books is like a body without a soul."
     
+    FU_Holland_Netherlands_Events.26.t: "The Black Army of Arum Rises"
+    FU_Holland_Netherlands_Events.26.d: " " 
+    FU_Holland_Netherlands_Events.26.a: "Let's hope the forts will hold until reinforcements arrive."
+    
+    FU_Holland_Netherlands_Events.27.t: "Act of Abjuration"
+    FU_Holland_Netherlands_Events.27.d: " " 
+    FU_Holland_Netherlands_Events.27.a: "This treaty will be the beginning of our great nation!"
+    
+    FU_Holland_Netherlands_Events.28.t: "Alexander Farnese"
+    FU_Holland_Netherlands_Events.28.d: " " 
+    FU_Holland_Netherlands_Events.28.a: "We shall accept his governorship."
+    FU_Holland_Netherlands_Events.28.b: "Let us remain defiant."
+    
+    FU_Holland_Netherlands_Events.29.t: "William the Silent"
+    FU_Holland_Netherlands_Events.29.d: " " 
+    FU_Holland_Netherlands_Events.29.a: "He will make a fine head of state."
+    FU_Holland_Netherlands_Events.29.b: "We cannot abandon our current figurehead."
+    
+    FU_Holland_Netherlands_Events.30.t: "Jan Amos Comenius"
+    FU_Holland_Netherlands_Events.30.d: " " 
+    FU_Holland_Netherlands_Events.30.a: "What a brilliant mind!"
+    
+    FU_Holland_Netherlands_Events.31.t: "Antonie van Leeuwenhoek" 
+    FU_Holland_Netherlands_Events.31.d: " " 
+    FU_Holland_Netherlands_Events.31.a: "Long live the father of microbiology!"
+    
+    FU_Holland_Netherlands_Events.32.t: "Jan Leeghwater"
+    FU_Holland_Netherlands_Events.32.d: " "
+    FU_Holland_Netherlands_Events.32.a: "A gifted man of construction and architecture!"
+    
+    FU_Holland_Netherlands_Events.33.t: "Joost van den Vondel"
+    FU_Holland_Netherlands_Events.33.d: " " 
+    FU_Holland_Netherlands_Events.33.a: "What a performance!"
+    
+    FU_Holland_Netherlands_Events.34.t: "High Cuisine in the Low Countries"
+    FU_Holland_Netherlands_Events.34.d: " " 
+    FU_Holland_Netherlands_Events.34.a: "Finally, some delicious food!"
+    
+    FU_Holland_Netherlands_Events.35.t: "Scenes of Everyday Life"
+    FU_Holland_Netherlands_Events.35.d: " "
+    FU_Holland_Netherlands_Events.35.a: "Art is the expression of the soul."
+    
+    FU_Holland_Netherlands_Events.36.t: "The House of Elzevir"
+    FU_Holland_Netherlands_Events.36.d: " " 
+    FU_Holland_Netherlands_Events.36.a: "Books a-plenty!"
+    
+    FU_Holland_Netherlands_Events.37.t: "Beeldenstorm" 
+    FU_Holland_Netherlands_Events.37.d: " " 
+    FU_Holland_Netherlands_Events.37.a: "Turbulent times..."
+    
+    FU_Holland_Netherlands_Events.38.t: "Friendship and Compromise?"
+    FU_Holland_Netherlands_Events.38.d: " " 
+    FU_Holland_Netherlands_Events.38.a: "So be it. The people of Picardy and Normandy are our friends."
+    FU_Holland_Netherlands_Events.38.b: "We have plans for them..."
+    
+    
     
     #Decision 
     ned_unite_two_crowns_title: "United the Two Crowns"
@@ -361,6 +424,29 @@
     VOC: "Dutch East Indies"
     FU1_ADJ: "Dutch"
     FU1_ADJ2: "Dutch"
+    #Ideas 
+    VOC_ideas: "Dutch East Indies Ideas"
+    VOC_ideas_start: "Dutch East Indies Traditions" 
+    VOC_ideas_bonus: "Dutch East Indies Ambition"
+    
+    VOC_organize_expeditions: "Organize Expeditions"
+    VOC_organize_expeditions_desc: "Let us send expetitions in the deepest jungles and the most far-away shores, in an effort to uncover great treasure and improve our grandeur in the world."
+    VOC_exploit_natives: "Exploit the Native Populations"
+    VOC_exploit_natives_desc: "They are savages! They know not the wealth that sleeps beneath their feet. It is up to us to find efficient ways to exploit and extract every last ducat from their unmapped shores."
+    VOC_charter_inland_parties: "Charter Inland Parties"
+    VOC_charter_inland_parties_desc: "'Tread softly and carry a big stick - you will go far inland.' -East Indies Company saying"
+    VOC_company_with_an_army: "Company with an Army"
+    VOC_company_with_an_army_desc: "We cannot protect our interests both at home and abroad without the formation of a large independent army amongst our colonial holdings in Africa, India and the Eastern Islands. \n\nIf @NED Netherlands is our overlord, they receive the following reward as long as we remain their subject: \nLand Forcelimit Modifier: §G+10%§!"
+    VOC_overseas_outposts: "Overseas Outposts" 
+    VOC_overseas_outposts_desc: "By developing shores abroad into wealthy and rich communities, we have achieved in turning these hostile and unwelcoming lands into a carved-out image of our home back in Europe."
+    VOC_crown_funds: "Crown Funds"
+    VOC_crown_funds_desc: "The crown back home recently decided to fund our monetary development abroad by providing us shipments of workers and material at a great discount, for the benefit and development of the VOC itself."
+    
+    
+    #Dutch Trading Policy
+    fu_christian_propagate_religion: "Exchange of Ideals"
+    fu_christian_propagate_religion_desc: "Trading with foreign natives is a medium that will not only lead to extravagant wealth but also the spreading of our core beliefs and ideals!"
+    
     
     #Japanese MC
     FU_elite_imperial_japanese_guard: "Imperial Palace Japanese Guard"

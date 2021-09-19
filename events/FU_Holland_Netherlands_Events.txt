@@ -626,6 +626,18 @@ country_event = {
 		release = VOC 
 		vassalize = VOC 
 		VOC = { 
+			define_ruler = {
+				name = "Johan"
+				dynasty = "van Oldenbarnevelt"
+				adm = 4 
+				dip = 6 
+				mil = 2 
+				fixed = yes 
+			}
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				add_ruler_personality = expansionist_personality
+			}
 			change_government_reform_progress = 250
 			change_government = republic
 			add_government_reform = merchants_reform
@@ -798,14 +810,646 @@ country_event = { #Powerhouse in the Book Trade
 			value = 0.25
 			duration = -1
 		}
+	}
+}
+
+country_event = { #The Black Army of Arum Rises
+	id = FU_Holland_Netherlands_Events.26
+	title =  FU_Holland_Netherlands_Events.26.t 
+	desc = FU_Holland_Netherlands_Events.26.d 
+	picture = ANGRY_MOB_eventPicture
+	fire_only_once = yes 
+	
+	trigger = { 
+		OR = { 
+			tag = NED 
+			culture_group = germanic 
+		}
+		owns = 100 
+		war_exhaustion = 2 
+		if = {
+			limit = { has_dlc = "Mandate of Heaven" } 
+			100 = { devastation = 5 }
+		}
+		else = { 
+			NOT = { stability = 0 } 
+		}
+	}
+	
+	mean_time_to_happen = { months = 12 } 
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.26.a 
+		
+		100 = { 
+			spawn_rebels = {
+				size = 3
+				type = leadered_peasant_rebels
+				win = yes 	
+			}
+		}
+	}
+}
 	
 	
+country_event = { #Act of Abjuration
+	id = FU_Holland_Netherlands_Events.27
+	title = FU_Holland_Netherlands_Events.27.t 
+	desc = FU_Holland_Netherlands_Events.27.d 
+	picture = COURT_eventPicture
+	fire_only_once = yes 
 	
+	trigger = {
+		tag = NED 
+		is_subject = no 
+	}
 	
+	mean_time_to_happen = { months = 3 } 
 	
+	option = { 
+		name = FU_Holland_Netherlands_Events.27.a 
+		
+		add_power_projection = {
+			type = mission_rewards_power_projection
+			amount = 25
+		}
+		add_prestige = 10
+	}
+}
+
+country_event = { #Alexander Farnese
+	id = FU_Holland_Netherlands_Events.28
+	title = FU_Holland_Netherlands_Events.28.t 
+	desc = FU_Holland_Netherlands_Events.28.d 
+	picture = ADVISOR_eventPicture
+	fire_only_once = yes 
 	
+	trigger = { 
+		tag = NED 
+		is_subject = yes
+		is_lesser_in_union = no  
+		is_year = 1550 
+		NOT = { is_year = 1600 }
+		overlord = { culture_group = iberian } 
+	}
 	
+	mean_time_to_happen = { months = 24 } 
 	
+	option = {
+		name = FU_Holland_Netherlands_Events.28.a 
+		
+		hidden_effect = { kill_ruler = yes } 
+		define_ruler = {
+			name = "Alexander"
+			dynasty = Farnese 
+			culture = spanish
+			adm = 4 
+			dip = 4
+			mil = 4
+			fixed = yes 
+			religion = catholic 
+		}
+	}
 	
+	option = {
+		name = FU_Holland_Netherlands_Events.28.b 
+		
+		add_prestige = 5
+		overlord = { 
+			add_opinion = {
+				who = ROOT 
+				modifier = insulted
+			}
+		}
+		add_liberty_desire = 10
+	}
+}
 	
+country_event = { #Willem van Oranje
+	id = FU_Holland_Netherlands_Events.29
+	title = FU_Holland_Netherlands_Events.29.t 
+	desc = FU_Holland_Netherlands_Events.29.d 
+	picture = fu_willem_eventPicture
+	fire_only_once = yes 
 	
+	trigger = { 
+		tag = NED 
+		is_year = 1540
+		NOT = { is_year = 1585 }
+		is_subject = no 
+	}
+	
+	mean_time_to_happen = { months = 36 } 
+	
+	option = {
+		name = FU_Holland_Netherlands_Events.29.a
+		
+		hidden_effect = { kill_ruler = yes } 
+		define_ruler = {
+			name = "Willem"
+			dynasty = "van Oranje"
+			adm = 5 
+			dip = 5
+			mil = 3
+		}
+		if = { 
+			limit = { has_dlc = "Rights of Man" }
+			add_ruler_personality = inspiring_leader_personality
+			add_ruler_personality = tolerant_personality
+		}
+	}
+	
+	option = {
+		name = FU_Holland_Netherlands_Events.29.b 
+		
+		add_prestige = 10 
+		add_legitimacy = 10
+		add_republican_tradition = 5
+	}
+}
+
+country_event = { #Jan Amos Comenius
+	id = FU_Holland_Netherlands_Events.30
+	title = FU_Holland_Netherlands_Events.30.t 
+	desc = FU_Holland_Netherlands_Events.30.d 
+	picture = ADVISOR_eventPicture
+	fire_only_once = yes 
+	
+	trigger = {
+		tag = NED 
+		is_year = 1600 
+		NOT = { is_year = 1650 } 
+		has_country_flag = ned_various_events_about_culture_flag
+		OR = { 
+			religion = protestant 
+			religion = reformed 
+			has_global_modifier_value = {
+				which = tolerance_heretic 
+				value = 2 
+			}
+		}
+	}
+	
+	mean_time_to_happen = { months = 24 } 
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.30.a 
+		
+		define_advisor = {
+			type = philosopher
+			name = "Jan Amos Comenius"
+			skill = 3 
+			cost_multiplier = 0.25
+		}
+		if = { 
+			limit = { has_dlc = "Rule Britannia" }
+			change_innovativeness = 1 
+		}
+		else = { add_adm_power = 50 }
+	}
+}
+	
+country_event = { #Antonie van Leeuwenhoek
+	id = FU_Holland_Netherlands_Events.31
+	title = FU_Holland_Netherlands_Events.31.t 
+	desc = FU_Holland_Netherlands_Events.31.d 
+	picture = fu_antonie_eventPicture
+	fire_only_once = yes 
+	
+	trigger = {	
+		tag = NED 
+		is_year = 1630 
+		NOT = { is_year = 1720 }
+		has_country_flag = ned_various_events_about_culture_flag
+		OR = { 
+			religion = protestant 
+			religion = reformed 
+			has_global_modifier_value = {
+				which = tolerance_heretic 
+				value = 2 
+			}
+		}
+	}
+	
+	mean_time_to_happen = { months = 120 }
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.31.a 
+		
+		define_advisor = {
+			type = natural_scientist
+			name = "Antonie van Leeuwenhoek"
+			skill = 2
+			cost_multiplier = 0.5
+		}
+		if = { 
+			limit = { has_dlc = "Rule Britannia" }
+			change_innovativeness = 3 
+		}
+		else = { add_adm_power = 50 }
+	}
+}
+
+country_event = { #Jan Leeghwater
+	id = FU_Holland_Netherlands_Events.32
+	title = FU_Holland_Netherlands_Events.32.t 
+	desc = FU_Holland_Netherlands_Events.32.d 
+	picture = ADVISOR_eventPicture
+	fire_only_once = yes 
+	
+	trigger = {
+		tag = NED 
+		has_country_flag = ned_various_events_about_culture_flag 
+		is_year = 1575 
+		NOT = { is_year = 1625 }
+	}
+	
+	mean_time_to_happen = { months = 120 }
+	
+	option = {
+		name = FU_Holland_Netherlands_Events.32.a 
+		
+		define_advisor = {
+			type = fu_city_planner
+			name = "Antonie van Leeuwenhoek"
+			skill = 3
+			cost_multiplier = 0.5
+		}
+		custom_tooltip = ned_city_planner_tt
+		if = { 
+			limit = { has_dlc = "Rule Britannia" }
+			change_innovativeness = 1 
+		}
+		else = { add_adm_power = 50 }
+	}
+}
+
+country_event = { #Joost van den Vondel
+	id = FU_Holland_Netherlands_Events.33
+	title = FU_Holland_Netherlands_Events.33.t 
+	desc = FU_Holland_Netherlands_Events.33.d 
+	picture = CULTURE_eventPicture
+	fire_only_once = yes 
+	
+	trigger = {
+		tag = NED 
+		has_country_flag = ned_various_events_about_culture_flag 
+		is_year = 1587 
+		NOT = { is_year = 1680 } 
+	}
+	
+	mean_time_to_happen = { months = 120 } 
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.33.a 
+		
+		add_dip_power = 50 
+		add_stability_or_adm_power = yes 
+	}
+}
+
+country_event = { #High Cuisine in the Low Countries 
+	id = FU_Holland_Netherlands_Events.34
+	title = FU_Holland_Netherlands_Events.34.t 
+	desc = FU_Holland_Netherlands_Events.34.d 
+	picture = fu_cuisine_hawt_eventPicture
+	fire_only_once = yes 
+	trigger = {
+		tag = NED 
+		has_country_flag = ned_various_events_about_culture_flag
+		is_year = 1525 
+	}
+	mean_time_to_happen = { months = 120 }
+	
+	option = {
+		name = FU_Holland_Netherlands_Events.34.a 
+		
+		if = { 
+			limit = { has_dlc = "Mandate of Heaven" }
+			add_splendor = 200 
+		}
+		else = { add_prestige = 15 }
+	}
+}			
+
+country_event = { #Scenes of Everyday Life
+	id = FU_Holland_Netherlands_Events.35
+	title = FU_Holland_Netherlands_Events.35.t 
+	desc = FU_Holland_Netherlands_Events.35.d 
+	picture = fu_gurl_eventPicture
+	fire_only_once = yes 
+	
+	trigger = {
+		tag = NED 
+		has_country_flag = ned_various_events_about_culture_flag
+	}
+	
+	mean_time_to_happen = { months = 120 }
+	
+	option = {
+		name = FU_Holland_Netherlands_Events.35.a 
+		
+		if = { 
+			limit = { has_dlc = "Mandate of Heaven" }
+			add_splendor = 100 
+		}
+		else = { add_prestige = 10 }
+		if = { 
+			limit = { has_dlc = "Rule Britannia" }
+			change_innovativeness = 1 
+		}
+		else = { add_dip_power = 50 }
+		
+		if = { 
+			limit = { owns = 98 } 
+			define_advisor = {
+				name = "Adriaen van Utrecht"
+				type = artist 
+				cost_multiplier = 0.5
+			}
+		}
+	}
+}
+
+country_event = { #The House of Elzevir
+	id = FU_Holland_Netherlands_Events.36
+	title = FU_Holland_Netherlands_Events.36.t 
+	desc = FU_Holland_Netherlands_Events.36.d 
+	picture = BIG_BOOK_eventPicture 
+	fire_only_once = yes 
+	
+	trigger = {
+		tag = NED 
+		mission_completed = ned_dutch_miracle
+		is_year = 1650 
+		NOT = { is_year = 1750 }
+	}
+	
+	mean_time_to_happen = { months = 120 } 
+	
+	option = {
+		name = FU_Holland_Netherlands_Events.36.a 
+		
+		custom_tooltip = ned_every_paper_province_1_production
+		hidden_effect = { 
+			every_owned_province = {
+				limit = { 
+					trade_goods = paper 
+					continent = europe 
+				}
+				add_base_production = 1 
+			}
+		}
+		if = { 
+			limit = { has_dlc = "Rule Britannia" }
+			change_innovativeness = 2 
+		}
+		else = { add_dip_power = 50 }
+	}
+}
+
+country_event = { #Beeldenstorm 
+	id = FU_Holland_Netherlands_Events.37
+	title = FU_Holland_Netherlands_Events.37.t 
+	desc = FU_Holland_Netherlands_Events.37.d 
+	picture = LUTHER_eventPicture
+	
+	trigger = { 
+		tag = NED 
+		is_religion_enabled = protestant
+		NOT = { mission_completed = ned_past_beeldenstorm }
+		
+	}
+	
+	mean_time_to_happen = { months = 6 } 
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.37.a 
+		
+		add_country_modifier = {
+			name = ned_beeldenstorm_modifier 
+			duration = -1 
+			desc = until_we_complete_the_beeldenstorm_mission_desc
+		}
+		add_stability = -1  
+	}
+}
+
+country_event = { #Our friends in the West
+	id = FU_Holland_Netherlands_Events.38
+	title = FU_Holland_Netherlands_Events.38.t 
+	desc = FU_Holland_Netherlands_Events.38.d 
+	picture = DIPLOMACY_SIGNING_eventPicture
+	fire_only_once = yes 
+	
+	trigger = {
+		tag = NED 
+		OR = { 
+			NOT = { mission_completed = ned_cross_somme } 
+			NOT = { mission_completed = ned_islands_coast }
+		}
+		picardy_area = {
+			type = all 
+			owner = { alliance_with = ROOT } 
+		}
+		normandy_area = {
+			type = all 
+			owner = { alliance_with = ROOT } 
+		}
+	}
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.38.a 
+		
+		custom_tooltip = ned_no_rewards_tt
+		complete_mission = ned_cross_somme
+		complete_mission = ned_islands_coast
+	}
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.38.b 
+		
+		add_prestige = 5
+	}
+}
+
+country_event = { #hidden forcelimit 
+	id = FU_Holland_Netherlands_Events.39 
+	title = FU_Holland_Netherlands_Events.39.t 
+	desc = FU_Holland_Netherlands_Events.39.d 
+	picture = WESTERNISATION_eventPicture 
+	hidden = yes 
+	
+	trigger = {
+		tag = NED 
+		VOC = { 
+			is_subject_of = ROOT 
+			has_idea = VOC_company_with_an_army
+		}
+		NOT = { has_country_modifier = ned_VOC_company_with_an_army_modifier } 
+	}
+	
+	mean_time_to_happen = { months = 12 } 
+	
+	immediate = { 
+		add_country_modifier = {
+			name = ned_VOC_company_with_an_army_modifier
+			duration = -1 
+		}
+	}
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.39.a 
+	}
+}
+
+country_event = { #hidden forcelimit 
+	id = FU_Holland_Netherlands_Events.40 
+	title = FU_Holland_Netherlands_Events.40.t 
+	desc = FU_Holland_Netherlands_Events.40.d 
+	picture = WESTERNISATION_eventPicture 
+	hidden = yes 
+	
+	trigger = {
+		tag = NED 
+		has_country_modifier = ned_security_on_off_sea_modifier
+		NOT = { has_flagship = yes }
+	}
+	
+	mean_time_to_happen = { months = 12 } 
+	
+	immediate = { 
+		remove_country_modifier = ned_security_on_off_sea_modifier 
+	}
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.40.a 
+	}
+}
+
+country_event = { #hidden forcelimit 
+	id = FU_Holland_Netherlands_Events.41 
+	title = FU_Holland_Netherlands_Events.41.t 
+	desc = FU_Holland_Netherlands_Events.41.d 
+	picture = WESTERNISATION_eventPicture 
+	hidden = yes 
+	
+	trigger = {
+		tag = NED 
+		has_country_modifier = ned_republicanism_true_freedom_modifier
+		absolutism = 50 
+	}
+	
+	mean_time_to_happen = { months = 12 } 
+	
+	immediate = { 
+		remove_country_modifier = ned_republicanism_true_freedom_modifier 
+	}
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.40.a 
+	}
+}
+
+country_event = { #hidden forcelimit 
+	id = FU_Holland_Netherlands_Events.42 
+	title = FU_Holland_Netherlands_Events.42.t 
+	desc = FU_Holland_Netherlands_Events.42.d 
+	picture = WESTERNISATION_eventPicture 
+	hidden = yes 
+	
+	trigger = {
+		tag = NED 
+		has_country_modifier = ned_absolutist_regents_modifier
+		NOT = { absolutism = 50 } 
+	}
+	
+	mean_time_to_happen = { months = 12 } 
+	
+	immediate = { 
+		remove_country_modifier = ned_absolutist_regents_modifier 
+	}
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.42.a 
+	}
+}
+
+country_event = { #hidden forcelimit 
+	id = FU_Holland_Netherlands_Events.43 
+	title = FU_Holland_Netherlands_Events.43.t 
+	desc = FU_Holland_Netherlands_Events.43.d 
+	picture = WESTERNISATION_eventPicture 
+	hidden = yes 
+	
+	trigger = {
+		tag = NED 
+		has_country_modifier = ned_dutch_channel_profiteering_modifier
+		NOT = { 
+			1269 = {
+				trade_share = {
+					country = ROOT 
+					share = 50
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = { months = 12 } 
+	
+	immediate = { 
+		remove_country_modifier = ned_dutch_channel_profiteering_modifier 
+	}
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.43.a 
+	}
+}
+
+country_event = { #hidden forcelimit 
+	id = FU_Holland_Netherlands_Events.44 
+	title = FU_Holland_Netherlands_Events.44.t 
+	desc = FU_Holland_Netherlands_Events.44.d 
+	picture = WESTERNISATION_eventPicture 
+	hidden = yes 
+	
+	trigger = {
+		tag = NED 
+		has_country_modifier = ned_hegemon_of_the_americas_modifier
+		NOT = { colony = 6 }
+	}
+	
+	mean_time_to_happen = { months = 12 } 
+	
+	immediate = { 
+		remove_country_modifier = ned_hegemon_of_the_americas_modifier 
+	}
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.44.a 
+	}
+}
+
+country_event = { #hidden forcelimit 
+	id = FU_Holland_Netherlands_Events.45 
+	title = FU_Holland_Netherlands_Events.45.t 
+	desc = FU_Holland_Netherlands_Events.45.d 
+	picture = WESTERNISATION_eventPicture 
+	hidden = yes 
+	
+	trigger = {
+		tag = NED 
+		has_country_modifier = ned_first_state_funded_corporation_modifier
+		VOC = { is_subject = no } 
+	}
+	
+	mean_time_to_happen = { months = 12 } 
+	
+	immediate = { 
+		remove_country_modifier = ned_first_state_funded_corporation_modifier 
+	}
+	
+	option = { 
+		name = FU_Holland_Netherlands_Events.44.a 
+	}
+}

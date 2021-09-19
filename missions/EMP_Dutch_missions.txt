@@ -118,6 +118,13 @@ fu_netherlands_missions_1 = {
 				duration = -1 
 				desc = as_long_as_we_have_50_share_desc
 			}
+			home_counties_area = {
+				limit = { 
+					NOT = { is_permanent_claim = ROOT } 
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			}
 		}
 	}
 	
@@ -556,7 +563,7 @@ fu_netherlands_missions_1 = {
 	
 	ned_schutters_cloveniers = {
 		icon = challenge_spanish_power 
-		required_missions = { ned_three_canals_plan }
+		required_missions = { ned_three_canals_plan ned_question_freedom }
 		position = 12
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -929,13 +936,21 @@ fu_netherlands_missions_2 = {
 			num_of_light_ship = 25
 		}
 		effect = {
-			if = {
-				limit = { 
-					1177 = { is_empty = yes } 
+			1177 = {
+				if = {
+					limit = {
+						OR = {
+							is_empty = yes
+							AND = {
+								owned_by = ROOT
+								is_city = no
+							}
+						}
+					}
+					add_siberian_construction = 750
 				}
-				1177 = { add_colonysize = 1000 }
 			}
-			else_if = {
+			if = {
 				limit = { 
 					1177 = { country_or_non_sovereign_subject_holds = ROOT }
 				}
@@ -945,6 +960,7 @@ fu_netherlands_missions_2 = {
 				name = ned_stardust_adventures_modifier
 				duration = 7300 
 			}
+			1147 = { add_permanent_claim = ROOT }
 		}
 	}
 	
@@ -1500,6 +1516,7 @@ fu_netherlands_missions_4 = {
 							}
 						}
 					}
+					set_country_flag = ned_french_influences_flag
 					add_country_modifier = {
 						name = ned_french_influence_modifier
 						duration = -1 
@@ -1555,6 +1572,41 @@ fu_netherlands_missions_4 = {
 					}
 				}
 			}
+			weser_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT } 
+				}
+				add_permanent_claim = ROOT 
+			}
+			mecklenburg_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT } 
+				}
+				add_permanent_claim = ROOT 
+			}
+			lower_saxony_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT } 
+				}
+				add_permanent_claim = ROOT 
+			}
+			wallonia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT } 
+				}
+				add_permanent_claim = ROOT 
+			}
+			picardy_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT } 
+				}
+				add_permanent_claim = ROOT 
+			}
 		}
 	}
 	
@@ -1583,6 +1635,18 @@ fu_netherlands_missions_4 = {
 		}
 		effect = {
 			country_event = { id = FU_Holland_Netherlands_Events.13 } 
+			denmark_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT } 
+				}
+				add_permanent_claim = ROOT 
+			}
+			1 = { add_permanent_claim = ROOT }
+			43 = { add_permanent_claim = ROOT }
+			41 = { add_permanent_claim = ROOT }
+			38 = { add_permanent_claim = ROOT }
+			25 = { add_permanent_claim = ROOT }
 		}
 	}
 	
@@ -1904,7 +1968,7 @@ fu_netherlands_missions_4 = {
 	
 	ned_beyond_cape = {
 		icon = challenge_spanish_power 
-		required_missions = { } 
+		required_missions = { ned_dutch_expedition } 
 		position = 14
 		trigger = {
 			num_of_colonists = 1 
@@ -1924,6 +1988,14 @@ fu_netherlands_missions_4 = {
 				add_permanent_claim = ROOT 
 			}
 			south_lanka_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT } 
+				}
+				add_permanent_claim = ROOT 
+			}
+			596 = { add_permanent_claim = ROOT }
+			banten_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
 					NOT = { is_core = ROOT } 
@@ -1983,6 +2055,15 @@ fu_netherlands_missions_4 = {
 				name = ned_trading_malay_kingdoms_modifier
 				duration = 7300
 			}
+			649 = { add_permanent_claim = ROOT }
+			650 = { add_permanent_claim = ROOT }
+			taiwan_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 	
@@ -2023,33 +2104,32 @@ fu_netherlands_missions_4 = {
 				country_event = { id = FU_Holland_Netherlands_Events.21 } 
 			}
 			else = { custom_tooltip = ned_purchase_canton_tt } 
-			
-		}
-		4182 = {
-			if = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT }
-					NOT = { is_core = ROOT }
+			4182 = {
+				if = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
 			}
-		}
-		4651 = {
-			if = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT }
-					NOT = { is_core = ROOT }
+			4651 = {
+				if = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
 			}
-		}
-		2741 = {
-			if = {
-				limit = {
-					NOT = { is_permanent_claim = ROOT }
-					NOT = { is_core = ROOT }
+			2741 = {
+				if = {
+					limit = {
+						NOT = { is_permanent_claim = ROOT }
+						NOT = { is_core = ROOT }
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -2564,9 +2644,12 @@ fu_netherlands_missions_5 = {
 						has_country_modifier = the_test_act
 					}
 				}
-				custom_trigger_tooltip = {
-					tooltip = ned_beeldenstorm_event_tt
-					has_country_flag = ned_had_beeldenstorm_event_flag 
+				OR = { 
+					custom_trigger_tooltip = {
+						tooltip = ned_beeldenstorm_event_tt
+						has_country_flag = ned_had_beeldenstorm_event_flag 
+					}
+					is_year = 1550 
 				}
 			}
 			else = { religious_unity = 1 } 
@@ -2624,11 +2707,15 @@ fu_netherlands_missions_5 = {
 					}
 				}
 			}
+			if = { 
+				limit = { has_country_modifier = ned_beeldenstorm_modifier }
+				remove_country_modifier = ned_beeldenstorm_modifier
+			}
 		}
 	}
 	
 	ned_fund_golden_arts = {
-		icon = challenge_spanish_power 
+		icon = continue_the_renaissance 
 		required_missions = { ned_past_beeldenstorm } 
 		position = 11 
 		trigger = {
@@ -2764,6 +2851,27 @@ fu_netherlands_missions_5 = {
 						duration = -1 
 					}
 				}
+			}
+			malaya_region = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			indonesia_region = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			moluccas_region = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
