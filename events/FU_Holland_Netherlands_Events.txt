@@ -1682,7 +1682,7 @@ country_event = {
 		add_stability = -1 
 		add_legitimacy = -25 
 		add_republican_tradition = -15
-		add_manpower = -0.001
+		add_manpower = -0.002
 	}
 }
 	
