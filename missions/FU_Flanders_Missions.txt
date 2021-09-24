@@ -198,50 +198,24 @@ fu_flanders_missions_1 = {
 			92 = { country_or_non_sovereign_subject_holds = ROOT }
 			custom_trigger_tooltip = {
 				tooltip = fla_every_dutch_subject_tt
-				all_subject_country = {
-					capital_scope = { region = low_countries_region }
-					primary_culture = dutch
-					NOT = { liberty_desire = 1 } 
-					has_opinion = {
-						who = ROOT
-						value = 175
+				NOT = {
+					any_subject_country = {
+						capital_scope = { region = low_countries_region }
+						primary_culture = dutch
+						OR = {
+							liberty_desire = 1
+							NOT = {
+								has_opinion = {
+									who = ROOT
+									value = 175
+								}
+							}
+						}
 					}
-				}
+				}	
 			}
 		}
 		effect = {
-			if = {
-				limit = { 
-					NED = { exists = no }
-				}
-				change_tag = NED 
-				90 = {
-					move_capital_effect = yes
-				}
-				swap_non_generic_missions = yes
-				if = {
-					limit = {
-						NOT = {
-							government_rank = 2
-						}
-					}
-					NED = { set_government_rank = 2 }
-				}
-				set_country_flag = formed_netherlands_flag
-				add_prestige = 25
-				if = {
-					limit = {
-						has_custom_ideas = no
-						NOT = { has_idea_group = NED_ideas }
-					}
-					country_event = { id = ideagroups.1 } #Swap Ideas
-				}
-			}
-			else = {
-				change_adm = 1 
-				change_dip = 1 
-				change_mil = 1 
-			}
 			custom_tooltip = fla_if_any_dutch_subjects_instagrate_tt
 			hidden_effect = {
 				if = {	
@@ -309,6 +283,38 @@ fu_flanders_missions_1 = {
 					}
 					inherit = GEL  
 				}
+			}
+			if = {
+				limit = { 
+					NED = { exists = no }
+				}
+				change_tag = NED 
+				90 = {
+					move_capital_effect = yes
+				}
+				swap_non_generic_missions = yes
+				if = {
+					limit = {
+						NOT = {
+							government_rank = 2
+						}
+					}
+					NED = { set_government_rank = 2 }
+				}
+				set_country_flag = formed_netherlands_flag
+				add_prestige = 25
+				if = {
+					limit = {
+						has_custom_ideas = no
+						NOT = { has_idea_group = NED_ideas }
+					}
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+			}
+			else = {
+				change_adm = 1 
+				change_dip = 1 
+				change_mil = 1 
 			}
 		}
 	}
@@ -423,7 +429,10 @@ fu_flanders_missions_2 = {
 		icon = claim_the_borderlands 
 		required_missions = { fla_sign_charter_liberty }
 		position = 6
-		provinces_to_highlight = { } 
+		provinces_to_highlight = { 
+			area = wallonia_area 
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
 		trigger = {	
 			wallonia_area = {
 				type = all 
@@ -538,25 +547,11 @@ fu_flanders_missions_3 = {
 			if = {
 				limit = {
 					is_subject_of = BUR 
-					BRB = { is_subject_of = BUR }
-					HOL = { is_subject_of = BUR }
-				}
-				HOL = { 
-					has_opinion = {
-						who = ROOT
-						value = 100
-					}
-				}
-				BRB = { 
-					has_opinion = {
-						who = ROOT
-						value = 100
-					}
 				}
 				BUR = {
 					has_spy_network_from = {
 						who = ROOT
-						value = 30
+						value = 50
 					}
 				}
 			}
@@ -592,34 +587,41 @@ fu_flanders_missions_3 = {
 		effect = {
 			if = {	
 				limit = {
-					is_subject_of = BUR 
-					BRB = { is_subject_of = BUR }
-					HOL = { is_subject_of = BUR }
+					is_subject_of = BUR
 				}
-				BUR = {	
-					add_country_modifier = {	
-						name = fla_court_secrets_modifier
-						duration = 5475 
+				custom_tooltip = fla_convince_them_to_rebel_tt
+				hidden_effect = { 
+					HOL = { 
+						add_liberty_desire = 75 
+						add_opinion = {
+							who = BUR
+							modifier = opinion_insulted_by_accusation
+						}
+					}
+					BRB = { 
+						add_liberty_desire = 75 
+						add_opinion = {
+							who = BUR
+							modifier = opinion_insulted_by_accusation
+						}
 					}
 				}
-				HOL = { 
-					add_liberty_desire = 75 
-					add_opinion = {
-						who = BUR
-						modifier = opinion_insulted_by_accusation
+				custom_tooltip = fla_infiltrate_burgundian_defenses_granting_tt
+				tooltip = { 
+					BUR = {	
+						add_country_modifier = {	
+							name = fla_court_secrets_modifier
+							duration = 3650 
+						}
 					}
 				}
-				BRB = { 
-					add_liberty_desire = 75 
-					add_opinion = {
-						who = BUR
-						modifier = opinion_insulted_by_accusation
+				hidden_effect = { 
+					BUR = {	
+						add_country_modifier = {	
+							name = fla_court_secrets_modifier
+							duration = 3650 
+						}
 					}
-				}
-				define_advisor = {
-					type = spymaster
-					cost_multiplier = 0.5
-					skill = 1
 				}
 			}
 			else_if = {
@@ -664,6 +666,12 @@ fu_flanders_missions_3 = {
 			add_stability_or_adm_power = yes 
 			flanders_area = { add_prosperity = 20 }
 			add_legitimacy = 20 
+			if = { 
+				limit = { 
+					NOT = { government_rank = 2 } 
+				}
+				capital_scope = { set_in_empire = yes }
+			}
 		}
 	}
 	
@@ -1161,9 +1169,9 @@ fu_flanders_missions_5 = {
 				base_production = 12 
 				value = 5 
 			}
-			trading_bonus = {
+			trading_part = {
 				trade_goods = cloth
-				value = yes
+				value = 0.1
 			}
 			mission_completed = fla_expand_lakenhallen 
 			90 = {

@@ -12,7 +12,7 @@ fu_netherlands_missions_1 = {
 	has_country_shield = yes
 	
 	ned_cross_somme = {
-		icon = challenge_spanish_power 
+		icon = develop_the_po_valley 
 		required_missions = { }
 		position = 1 
 		provinces_to_highlight = { 
@@ -70,7 +70,7 @@ fu_netherlands_missions_1 = {
 	}
 	
 	ned_islands_coast = {
-		icon = challenge_spanish_power 
+		icon = develop_our_capital 
 		required_missions = { ned_cross_somme }
 		position = 2 
 		provinces_to_highlight = { 
@@ -92,11 +92,27 @@ fu_netherlands_missions_1 = {
 				add_base_production = 1 
 			}
 			country_event = { id = FU_Holland_Netherlands_Events.7 } #Ducal Ring of Normandy
+			ile_de_france_area = {
+				limit = { 
+					NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			}
+			champagne_area = {
+				limit = { 
+					NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			}
 		}
 	}
 	
 	ned_narrow_sea = {
-		icon = challenge_spanish_power 
+		icon = mission_rb_monopolize_the_channel 
 		required_missions = { ned_islands_coast ned_unite_low_countries }
 		position = 4
 		provinces_to_highlight = {
@@ -129,7 +145,7 @@ fu_netherlands_missions_1 = {
 	}
 	
 	ned_kings_court = {
-		icon = challenge_spanish_power 
+		icon = fu_dutch_london 
 		required_missions = { ned_narrow_sea }
 		position = 5 
 		provinces_to_highlight = {
@@ -147,10 +163,21 @@ fu_netherlands_missions_1 = {
 				name = ned_dutch_supremacy_in_london_modifier
 				duration = 7300
 			}
+			if = { 
+				limit = { 
+					ENG = { is_subject_of = ROOT } 
+					GBR = { exists = no } 
+				}
+				ENG = { 
+					change_tag = GBR
+					add_prestige = 25 
+				}
+			}			
 			british_isles_region = {
 				limit = {
 					NOT = { is_permanent_claim = ROOT }
 					NOT = { is_core = ROOT }
+					NOT = { country_or_non_sovereign_subject_holds = ROOT } 
 				}
 				add_permanent_claim = ROOT
 			}
@@ -158,7 +185,7 @@ fu_netherlands_missions_1 = {
 	}
 	
 	ned_expand_dike_system = {
-		icon = challenge_spanish_power 
+		icon = fu_dutch_dikes 
 		required_missions = { } 
 		position = 6 
 		provinces_to_highlight = {
@@ -384,7 +411,7 @@ fu_netherlands_missions_1 = {
 	}
 	
 	ned_diamond_quarter = {
-		icon = challenge_spanish_power 
+		icon = mission_rb_inland_india 
 		required_missions = { ned_expand_dike_system }
 		position = 7
 		provinces_to_highlight = { province_id = 1744 }
@@ -396,6 +423,30 @@ fu_netherlands_missions_1 = {
 			}
 		}
 		effect = {
+			if = { 
+				limit = { 
+					any_owned_province = { 
+						has_province_modifier = diamond_district 
+						NOT = { province_id = 1744 }
+					}
+				}
+				custom_tooltip = ned_transfer_dd_tt
+				hidden_effect = { 
+					random_owned_province = { 
+						limit = { 
+							has_province_modifier = diamond_district 
+							NOT = { province_id = 1744 }
+						}
+						remove_province_modifier = diamond_district 
+					}
+					1744 = { 
+						add_province_modifier = {
+							name = diamond_district 
+							duration = -1 
+						}
+					}
+				}
+			}
 			if = {
 				limit = { 
 					has_global_flag = trade_goods_expanded_mod_active 
@@ -478,7 +529,7 @@ fu_netherlands_missions_1 = {
 	}
 	
 	ned_gouden_eeuw = {
-		icon =  challenge_spanish_power 
+		icon =  regents_contracts 
 		required_missions = { ned_diamond_quarter }
 		position = 8
 		trigger = {
@@ -490,15 +541,27 @@ fu_netherlands_missions_1 = {
 			navy_size = 200  #fml this needs a custom trigger tt because pdx did not localize this 
 		}
 		effect = {
-			add_country_modifier = {
-				name = ned_golden_era_dutch_republic_modifier
-				duration = 10950
+			if = { 
+				limit = { 
+					has_dlc = "Emperor" 
+					has_dlc = "Mandate of Heaven"
+				}
+				add_country_modifier = {
+					name = ned_golden_era_dutch_republic_modifier
+					duration = 9125
+				}
+			}
+			else = { 
+				add_country_modifier = {
+					name = ned_golden_era_dutch_republic_modifier
+					duration = 10950
+				}
 			}
 		}
 	}
 	
 	ned_athenaeum_illustre = {
-		icon = challenge_spanish_power 
+		icon = mission_early_modern_university 
 		required_missions = { ned_gouden_eeuw }
 		position = 9 
 		provinces_to_highlight = { province_id = 4383 } 
@@ -519,7 +582,7 @@ fu_netherlands_missions_1 = {
 	}
 	
 	ned_three_canals_plan = {
-		icon = challenge_spanish_power 
+		icon = mission_early_game_buildings 
 		required_missions = { }
 		position = 10
 		trigger = {
@@ -562,7 +625,7 @@ fu_netherlands_missions_1 = {
 	}
 	
 	ned_schutters_cloveniers = {
-		icon = challenge_spanish_power 
+		icon = establish_the_musketeers 
 		required_missions = { ned_three_canals_plan ned_question_freedom }
 		position = 12
 		trigger = {
@@ -611,7 +674,7 @@ fu_netherlands_missions_1 = {
 	}
 	
 	ned_settle_gold_coast = {
-		icon = challenge_spanish_power 
+		icon = invest_in_the_rich_trades 
 		required_missions = { ned_dutch_expedition }
 		position = 14
 		provinces_to_highlight = { 
@@ -664,7 +727,7 @@ fu_netherlands_missions_1 = {
 				trade_goods = slaves 
 				has_manufactory_trigger = yes 
 				base_production = 6 
-				value = 10 
+				value = 5
 			}
 		}
 		effect = {
@@ -683,7 +746,7 @@ fu_netherlands_missions_1 = {
 	}
 	
 	ned_new_amsterdam = {
-		icon = challenge_spanish_power
+		icon = settle_north_america
 		required_missions = { ned_charter_wic }
 		position = 17
 		provinces_to_highlight = { 
@@ -691,8 +754,12 @@ fu_netherlands_missions_1 = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			any_subject_country = {
-				capital_scope { colonial_region = colonial_eastern_america } 
+			custom_trigger_tooltip = { 
+				tooltip = ned_any_colonial_subject_cap_eastern_america_tt
+				any_subject_country = {
+					is_colonial_nation = yes
+					capital_scope { colonial_region = colonial_eastern_america } 
+				}
 			}
 			965 = { 
 				country_or_non_sovereign_subject_holds = ROOT 
@@ -749,7 +816,7 @@ fu_netherlands_missions_2 = {
 	has_country_shield = yes
 	
 	ned_royaume = {
-		icon = challenge_spanish_power 
+		icon = king_of_the_franks 
 		required_missions = { ned_islands_coast ned_treaty_mons }
 		position = 3 
 		provinces_to_highlight = {
@@ -785,7 +852,7 @@ fu_netherlands_missions_2 = {
 	}
 	
 	ned_glorious_revolution = {
-		icon = challenge_spanish_power 
+		icon = the_glorious_revolution 
 		required_missions = { ned_narrow_sea }
 		position = 5 
 		trigger = {
@@ -804,7 +871,7 @@ fu_netherlands_missions_2 = {
 	}
 
 	ned_haven_amsterdam = {
-		icon = challenge_spanish_power 
+		icon = fu_haven_van_amsterdam 
 		required_missions = { ned_expand_dike_system ned_centralise_stadtholders }
 		position = 7
 		provinces_to_highlight = { province_id = 97 }
@@ -836,7 +903,7 @@ fu_netherlands_missions_2 = {
 	}
 	
 	ned_leiden_faculty_fu = {
-		icon = challenge_spanish_power 
+		icon = leiden_university 
 		required_missions = { ned_haven_amsterdam ned_provincial_liberites }
 		position = 9 
 		provinces_to_highlight = { province_id = 4383 }
@@ -876,7 +943,7 @@ fu_netherlands_missions_2 = {
 	}
 	
 	ned_question_freedom = {
-		icon = challenge_spanish_power 
+		icon = the_true_freedom 
 		required_missions = { ned_principles_natural_law }
 		position = 11
 		trigger = {
@@ -927,7 +994,7 @@ fu_netherlands_missions_2 = {
 	}
 
 	ned_dutch_expedition = {
-		icon = challenge_spanish_power 
+		icon = support_the_bulk_trades 
 		required_missions = { }
 		position = 13 
 		trigger = {
@@ -965,7 +1032,7 @@ fu_netherlands_missions_2 = {
 	}
 	
 	ned_tame_western_seas = {
-		icon = challenge_spanish_power 
+		icon = mission_colonize_the_caribbean 
 		required_missions = { ned_dutch_expedition } 
 		position = 14
 		trigger = {
@@ -984,7 +1051,7 @@ fu_netherlands_missions_2 = {
 	}
 	
 	ned_charter_wic = {
-		icon = challenge_spanish_power 
+		icon = charter_the_wic 
 		required_missions = { ned_tame_western_seas } 
 		position = 16 
 		trigger = {
@@ -1019,7 +1086,7 @@ fu_netherlands_missions_2 = {
 	}
 	
 	ned_wilde_kuust = {
-		icon = challenge_spanish_power 
+		icon = fu_wilde_kuust 
 		required_missions = { ned_charter_wic }
 		position = 17
 		provinces_to_highlight = {
@@ -1057,7 +1124,7 @@ fu_netherlands_missions_2 = {
 	}
 
 	ned_unite_americas = {
-		icon = challenge_spanish_power 
+		icon = support_american_independence 
 		required_missions = { ned_new_amsterdam ned_wilde_kuust ned_grand_design }
 		position = 18
 		trigger = {
@@ -1080,9 +1147,23 @@ fu_netherlands_missions_2 = {
 				duration = -1 
 				desc = as_long_as_we_maintain_6_colonies_in_the_americas_desc
 			}
-			add_adm_power = 100
-			add_dip_power = 100 
-			add_mil_power = 100 
+			if = { 
+				limit = { 
+					has_dlc = "Emperor" 
+					has_dlc = "Mandate of Heaven"
+				}
+				custom_tooltip = ned_eco_hegemon_tt
+			}
+			if = { 
+				limit = { 
+					NOT = { 
+						any_country = { monthly_income = ROOT }
+					}
+					total_development = 1000 
+					in_golden_age = yes 
+				}
+				set_country_flag = ned_eco_hegemony_flag
+			}
 		}
 	}	
 }
@@ -1101,7 +1182,7 @@ fu_netherlands_missions_3 = {
 	has_country_shield = yes
 	
 	ned_treaty_mons = {
-		icon = challenge_spanish_power 
+		icon = sponsor_the_arts 
 		required_missions = { ned_shape_staatse_leger }
 		position = 2 
 		provinces_to_highlight = {
@@ -1126,11 +1207,27 @@ fu_netherlands_missions_3 = {
 					loyalty = 15 
 				}
 			}
+			ile_de_france_area = {
+				limit = { 
+					NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			}
+			champagne_area = {
+				limit = { 
+					NOT = { country_or_non_sovereign_subject_holds = ROOT } 
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT 
+			}
 		}
 	}
 	
 	ned_unite_low_countries = {
-		icon = challenge_spanish_power 
+		icon = mission_spanish_netherlands 
 		required_missions = { ned_treaty_mons }
 		position = 3 
 		provinces_to_highlight = {
@@ -1155,7 +1252,7 @@ fu_netherlands_missions_3 = {
 	}
 	
 	ned_centralise_stadtholders = {
-		icon = challenge_spanish_power 
+		icon = consolidate_the_stadholders 
 		required_missions = { } 
 		position = 6 
 		trigger = {
@@ -1187,7 +1284,7 @@ fu_netherlands_missions_3 = {
 	}
 	
 	ned_common_lands = {
-		icon = challenge_spanish_power 
+		icon = generality_lands 
 		required_missions = { ned_centralise_stadtholders }
 		position = 7 
 		trigger = {
@@ -1208,7 +1305,7 @@ fu_netherlands_missions_3 = {
 	}
 	
 	ned_provincial_liberites = {
-		icon = challenge_spanish_power 
+		icon = adjust_the_general_means 
 		required_missions = { ned_common_lands } 
 		position = 8 
 		trigger = {
@@ -1249,16 +1346,16 @@ fu_netherlands_missions_3 = {
 	}
 
 	ned_principles_natural_law = { 
-		icon = challenge_spanish_power
+		icon = strengthen_the_vroedschappen
 		required_missions = { }
 		position = 10
 		trigger = {
 			stability = 3 
-			government_reform_progress = 300
+			government_reform_progress = 250
 			legitimacy_equivalent = 90 
 			OR = {
-				army_tradition = 65 
-				mercantilism = 50 
+				army_tradition = 50 
+				mercantilism = 30 
 			}
 		}
 		effect = {
@@ -1267,7 +1364,7 @@ fu_netherlands_missions_3 = {
 	}
 	
 	ned_bulwark_ideals = {
-		icon = challenge_spanish_power 
+		icon = reaffirm_civil_values 
 		required_missions = { ned_principles_natural_law ned_question_freedom ned_rearrange_social_structure }
 		position = 12 
 		trigger = {
@@ -1304,7 +1401,14 @@ fu_netherlands_missions_3 = {
 					}
 					trade_income_percentage = 0.5 
 				}
-			}	
+			}
+			if = { 
+				limit = { 
+					current_age = age_of_absolutism 
+					has_dlc = "Mandate of Heaven"
+				}
+				has_age_ability = ab_dutch_anti_corruption
+			}
 		}
 		effect = { 
 			add_country_modifier = {
@@ -1319,7 +1423,7 @@ fu_netherlands_missions_3 = {
 	}
 	
 	ned_governate_ceylon = {
-		icon = challenge_spanish_power 
+		icon = seize_ceylon 
 		required_missions = { ned_beyond_cape } 
 		position = 15
 		provinces_to_highlight = { 
@@ -1400,15 +1504,18 @@ fu_netherlands_missions_3 = {
 	}
 	
 	ned_grand_design = {
-		icon = challenge_spanish_power 
+		icon = colonize_brazil 
 		required_missions = { ned_charter_wic }
 		position = 17
 		trigger = {
-			any_subject_country = {
-				capital_scope = { 
-					region = brazil_region 
+			custom_trigger_tooltip = { 
+				tooltip = ned_any_colonial_subject_cap_col_brazil_tt
+				any_subject_country = {
+					capital_scope = { 
+						region = brazil_region 
+					}
+					is_colonial_nation = yes 
 				}
-				is_colonial_nation = yes 
 			}
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
 				province_has_center_of_trade_of_level = 1
@@ -1459,7 +1566,7 @@ fu_netherlands_missions_4 = {
 	has_country_shield = yes
 	
 	ned_shape_staatse_leger = {
-		icon = challenge_spanish_power 
+		icon = army_reforms 
 		required_missions = { }
 		position = 1
 		trigger = {
@@ -1572,6 +1679,13 @@ fu_netherlands_missions_4 = {
 					}
 				}
 			}
+			low_countries_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT } 
+				}
+				add_permanent_claim = ROOT 
+			}
 			weser_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
@@ -1593,13 +1707,6 @@ fu_netherlands_missions_4 = {
 				}
 				add_permanent_claim = ROOT 
 			}
-			wallonia_area = {
-				limit = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT } 
-				}
-				add_permanent_claim = ROOT 
-			}
 			picardy_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
@@ -1611,7 +1718,7 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_baltic_grain_trade = {
-		icon = challenge_spanish_power 
+		icon = fu_dutch_grain_trade 
 		required_missions = { ned_shape_staatse_leger }
 		position = 2 
 		provinces_to_highlight = {
@@ -1651,7 +1758,7 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_mare_balticum = {
-		icon = challenge_spanish_power
+		icon = mission_danzig_or_war
 		required_missions = { ned_unite_low_countries ned_baltic_grain_trade ned_adopt_kontor_system }
 		position = 4 
 		provinces_to_highlight = { province_id = 1926 } 
@@ -1669,7 +1776,7 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_concert_of_europe = {
-		icon = challenge_spanish_power 
+		icon = je_maintiendrai
 		required_missions = { ned_glorious_revolution ned_mare_balticum }
 		position = 6 
 		trigger = {
@@ -1757,7 +1864,7 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_found_admiralty_college = {	
-		icon = challenge_spanish_power 
+		icon = pontifical_universities 
 		required_missions = { ned_common_lands } 
 		position = 8 
 		trigger = {
@@ -1767,7 +1874,8 @@ fu_netherlands_missions_4 = {
 				}
 				custom_trigger_tooltip = {
 					tooltip = ned_enacted_admiralty_decision_tt
-					97 = { has_province_modifier = ned_admiralty_modifier }
+					97 = { has_province_modifier = ned_hol_found_the_amsterdam_admirality_province_modifier }
+					4383 = { has_province_modifier = ned_hol_found_the_den_haag_admirality_province_modifier }
 				}
 			}
 			else = { 
@@ -1792,9 +1900,9 @@ fu_netherlands_missions_4 = {
 				}
 			}
 			OR = {
-				is_variable_equal = {
-					which = naval_professionalism_var
-					value = 40
+				custom_trigger_tooltip = { 
+					tooltip = 40_naval_proff_tt
+					has_country_modifier = naval_professionalism_level_2
 				}
 				navy_tradition = 60 
 			}
@@ -1806,7 +1914,7 @@ fu_netherlands_missions_4 = {
 				}
 				add_country_modifier = {
 					name = ned_founded_5_admiralties_modifier
-					duration = -1 
+					duration = 10950 
 				}
 				change_variable = { naval_professionalism_var = 5 }
 			}
@@ -1815,7 +1923,7 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_rearrange_social_structure = {
-		icon = challenge_spanish_power 
+		icon = promote_the_carnevale 
 		required_missions = { ned_principles_natural_law }
 		position = 11 
 		trigger = {
@@ -1831,9 +1939,12 @@ fu_netherlands_missions_4 = {
 			}
 			OR = { 
 				has_estate_privilege = estate_nobles_supremacy_over_crown
-				trading_bonus = {
-					trade_goods = slaves
-					value = yes
+				AND = { 
+					trading_bonus = {
+						trade_goods = slaves
+						value = yes
+					}
+					mission_completed = ned_expand_slave_trade 
 				}
 				AND = { 
 					custom_trigger_tooltip = {
@@ -1863,7 +1974,7 @@ fu_netherlands_missions_4 = {
 			hidden_effect = {
 				if = {
 					limit = { 
-						full_idea_group = plutocracy 
+						full_idea_group = plutocracy_ideas 
 						has_country_modifier = the_abolish_slavery_act
 					}
 					add_country_modifier = {
@@ -1930,7 +2041,7 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_support_textile_trade = {
-		icon = challenge_spanish_power 
+		icon = mission_state_manufactories 
 		required_missions = { ned_rearrange_social_structure ned_bulwark_ideals }
 		position = 13
 		trigger = {
@@ -1967,19 +2078,27 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_beyond_cape = {
-		icon = challenge_spanish_power 
+		icon = colonize_the_cape 
 		required_missions = { ned_dutch_expedition } 
 		position = 14
 		trigger = {
 			num_of_colonists = 1 
-			1177 = { country_or_non_sovereign_subject_holds = ROOT } 
+			1177 = { 
+				country_or_non_sovereign_subject_holds = ROOT 
+				is_city = yes 
+			}
 			estate_loyalty = {
 				estate = estate_burghers 
 				loyalty = 60 
 			}
+			96 = { owned_by = ROOT }
+			
 		}
 		effect = {
 			country_event = { id = FU_Holland_Netherlands_Events.20 }
+			hidden_effect = { 
+				country_event = { id = FU_Holland_Netherlands_Events.47 }
+			}
 			lanka_area = {
 				limit = {
 					NOT = { owned_by = ROOT }
@@ -2006,7 +2125,7 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_stadthuys = {
-		icon = challenge_spanish_power
+		icon = conquer_malacca
 		required_missions = { ned_beyond_cape }
 		position = 15 
 		provinces_to_highlight = { province_id = 596 }
@@ -2068,7 +2187,7 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_pax_hollandica = {
-		icon = challenge_spanish_power
+		icon = dutch_formosa
 		required_missions = { ned_stadthuys }
 		position = 17 
 		provinces_to_highlight = { 
@@ -2135,7 +2254,7 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_silver_empire = {
-		icon = challenge_spanish_power
+		icon = fu_silver_empire
 		required_missions = { ned_pax_hollandica }
 		position = 17 
 		provinces_to_highlight = { 
@@ -2218,7 +2337,7 @@ fu_netherlands_missions_4 = {
 	}
 	
 	ned_global_trade_hegemon = {
-		icon = challenge_spanish_power 
+		icon = regal_splendour 
 		required_missions = { ned_unite_americas ned_silver_empire ned_seize_malacca }
 		position = 18
 		provinces_to_highlight = {
@@ -2319,7 +2438,7 @@ fu_netherlands_missions_5 = {
 	has_country_shield = yes
 
 	ned_witte_paard = {
-		icon = challenge_spanish_power 
+		icon = fu_white_horse_company 
 		required_missions = { ned_shape_staatse_leger }
 		position = 2 
 		provinces_to_highlight = {
@@ -2431,7 +2550,7 @@ fu_netherlands_missions_5 = {
 	}
 	
 	ned_adopt_kontor_system = {
-		icon = challenge_spanish_power 
+		icon = the_london_steelyard 
 		required_missions = { ned_witte_paard ned_baltic_grain_trade }
 		position = 3
 		trigger = {
@@ -2497,7 +2616,7 @@ fu_netherlands_missions_5 = {
 	}
 	
 	ned_end_foreign_reliance = {
-		icon = challenge_spanish_power 
+		icon = toulon_dockyards	 
 		required_missions = { ned_reform_royal_navy }
 		position = 7 
 		provinces_to_highlight = { province_id = 96 }
@@ -2571,7 +2690,7 @@ fu_netherlands_missions_5 = {
 	}
 	
 	ned_zeven_provincien = {
-		icon = challenge_spanish_power 
+		icon = mission_launch_a_flagship 
 		required_missions = { ned_end_foreign_reliance }
 		position = 8
 		trigger = {	
@@ -2609,14 +2728,14 @@ fu_netherlands_missions_5 = {
 	}
 
 	ned_black_devils = {
-		icon = challenge_spanish_power 
-		required_missions = { ned_zeven_provincien }
+		icon = mission_sponsor_piracy 
+		required_missions = { ned_zeven_provincien ned_found_admiralty_college }
 		position = 9
 		trigger = {
 			num_of_marines = 10 
-			is_variable_equal = {
-				which = naval_professionalism_var
-				value = 70
+			custom_trigger_tooltip = { 
+				tooltip = 70_naval_proff_tt
+				has_country_modifier = naval_professionalism_level_3
 			}
 			navy_tradition = 80 
 		}
@@ -2626,7 +2745,7 @@ fu_netherlands_missions_5 = {
 	}
 	
 	ned_past_beeldenstorm = {
-		icon = challenge_spanish_power 
+		icon = mission_luther_theses 
 		required_missions = { } 
 		position = 10
 		trigger = { 
@@ -2715,7 +2834,7 @@ fu_netherlands_missions_5 = {
 	}
 	
 	ned_fund_golden_arts = {
-		icon = continue_the_renaissance 
+		icon = fu_golden_arts		
 		required_missions = { ned_past_beeldenstorm } 
 		position = 11 
 		trigger = {
@@ -2735,14 +2854,14 @@ fu_netherlands_missions_5 = {
 			}
 		}
 		effect = {
+			country_event = { id = FU_Holland_Netherlands_Events.24 }
 			custom_tooltip = ned_enable_various_events_about_culture_tt
 			set_country_flag = ned_various_events_about_culture_flag 
-			country_event = { id = FU_Holland_Netherlands_Events.24 }
 		}
 	}
 	
 	ned_dutch_miracle = {
-		icon = challenge_spanish_power
+		icon = reform_the_nomocanon
 		required_missions = { ned_fund_golden_arts ned_rearrange_social_structure }
 		position = 12 
 		trigger = {
@@ -2772,7 +2891,7 @@ fu_netherlands_missions_5 = {
 	}
 	
 	ned_found_batavia = {
-		icon = challenge_spanish_power 
+		icon = found_batavia 
 		required_missions = { ned_beyond_cape }
 		position = 15
 		provinces_to_highlight = { 
@@ -2782,11 +2901,8 @@ fu_netherlands_missions_5 = {
 		trigger = {
 			banten_area = {
 				type = all 
-				country_or_non_sovereign_subject_holds = ROOT 
-			}
-			development_in_provinces = {
-				value = 50 
-				area = banten_area 
+				country_or_non_sovereign_subject_holds = ROOT
+				development = 15 
 			}
 		}
 		effect = {
@@ -2812,7 +2928,7 @@ fu_netherlands_missions_5 = {
 	}
 	
 	ned_spice_trade = {
-		icon = challenge_spanish_power 
+		icon = indonesian_trade 
 		required_missions = { ned_stadthuys ned_found_batavia }
 		position = 16
 		provinces_to_highlight = {
@@ -2877,7 +2993,7 @@ fu_netherlands_missions_5 = {
 	}
 	
 	ned_seize_malacca = {
-		icon = challenge_spanish_power
+		icon = imperial_navy
 		required_missions = { ned_spice_trade }
 		position = 18
 		provinces_to_highlight = {

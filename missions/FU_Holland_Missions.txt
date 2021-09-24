@@ -53,7 +53,7 @@ FU_Holland_missions_1 = {
 		position = 4 
 		provinces_to_highlight = { } 
 		trigger = {
-			NOT = { average_autonomy = 10 }
+			NOT = { average_home_autonomy = 10 }
 			government_reform_progress = 200
 			crown_land_share = 40 
 		}

@@ -64,7 +64,7 @@ fu_christian_propagate_religion =
 	center_of_reformation = yes
 	trade_power = {
 		duration = -1
-		power_modifier = 0.0
+		power_modifier = 0.05
 		key = maximize_profits
 	}
 	button_gfx = GFX_fu_propagate_christianity_policy

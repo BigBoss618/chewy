@@ -90,10 +90,14 @@
  tt_if_engineering_ideas_tt: "If §YIdea Groups Expanded§! is active and we have completed §YEngineering§! or §YEconomic§! Ideas the province will get §G1§! Development in each category"
  fla_if_trust_tt: "If completed §Mdiplomatically§!:"
  fla_if_direct_ownership_tt: "If completed via §Mdirect ownership§!:"
- fla_if_any_dutch_subjects_instagrate_tt: "\n§MWe will integrate all our Dutch vassals under our newfound Republic§!"
- fla_dynamic_reward_tt: "\nThis mission offers a dynamic reward"
+ fla_if_any_dutch_subjects_instagrate_tt: "§MWe will integrate all our Dutch vassals under our newfound Republic§!"
+ fla_dynamic_reward_tt: "\nThis mission offers a dynamic reward if we complete it while independent"
  fla_philip_has_died_tt: "Duke §YPhilip III§! has died" 
  fla_upgrade_trade_buildings_tt: "Every §Ytrade building§! will be upgraded for free and ahead of time"
+ fla_convince_them_to_rebel_tt: "We will convince the Princes of @BRB[BRB.GetName] and @HOL[HOL.GetName] to rebel against their Burgundian masters"
+ fla_infiltrate_burgundian_defenses_granting_tt: "\n§YOur spies in the Burgundian Court will expose their defenses and intrigue, granting the following reward:§!"
+ 
+ 
  #Events
  FU_Flanders_Events.2.t: "The Republican Unification of the Low Countries"
  FU_Flanders_Events.2.d: " "

@@ -15,7 +15,7 @@ fu_VOC_missions_1 = {
 	
 	emp_ned_seize_ceylon = {
 		icon = seize_ceylon
-		required_missions = { }
+		required_missions = { emp_ned_charter_the_voc }
 		position = 2
 		
 		provinces_to_highlight = {
@@ -181,7 +181,7 @@ fu_VOC_missions_2 = {
 	
 	emp_ned_charter_the_voc = {
 		icon = mission_trade_company_region_abroad
-		required_missions = { emp_ned_invest_in_the_rich_trades }
+		required_missions = { }
 		position = 1
 		
 		trigger = {
@@ -387,7 +387,7 @@ fu_VOC_missions_5 = {
 	}
 	has_country_shield = yes
 	
-	gen_hre_financial_centre = {
+	fu_gen_hre_financial_centre = {
 		icon = appease_the_estates
 		required_missions = { high_income_mission }
 		position = 2
@@ -413,9 +413,9 @@ fu_VOC_missions_5 = {
 		}
 	}
 	
-	gen_hre_republic_reform_government = {
+	fu_gen_hre_republic_reform_government = {
 		icon = mission_early_modern_university
-		required_missions = { gen_hre_financial_centre }
+		required_missions = { fu_gen_hre_financial_centre }
 		position = 4
 
 		trigger = {

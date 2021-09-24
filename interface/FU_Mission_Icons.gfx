@@ -408,4 +408,40 @@ spriteTypes = {
 		name = "fu_flanders_lion"
 		texturefile = "gfx//interface//missions//flavor_universalis//Kapsalon//fu_flanders_lion.dds"
 	} 
+	spriteType = {  
+		name = "fu_dutch_london"
+		texturefile = "gfx//interface//missions//flavor_universalis//Kapsalon//fu_dutch_london.dds"
+	} 
+	spriteType = {  
+		name = "fu_dutch_dikes"
+		texturefile = "gfx//interface//missions//flavor_universalis//Kapsalon//fu_dutch_dikes.dds"
+	} 
+	spriteType = {  
+		name = "fu_dutch_river"
+		texturefile = "gfx//interface//missions//flavor_universalis//Kapsalon//fu_dutch_river.dds"
+	} 
+	spriteType = {  
+		name = "fu_haven_van_amsterdam"
+		texturefile = "gfx//interface//missions//flavor_universalis//Kapsalon//fu_haven_van_amsterdam.dds"
+	} 
+	spriteType = {  
+		name = "fu_wilde_kuust"
+		texturefile = "gfx//interface//missions//flavor_universalis//Kapsalon//fu_wilde_kuust.dds"
+	} 
+	spriteType = {  
+		name = "fu_dutch_grain_trade"
+		texturefile = "gfx//interface//missions//flavor_universalis//Kapsalon//fu_dutch_grain_trade.dds"
+	} 
+	spriteType = {  
+		name = "fu_silver_empire"
+		texturefile = "gfx//interface//missions//flavor_universalis//Kapsalon//fu_silver_empire.dds"
+	}
+	spriteType = {  
+		name = "fu_white_horse_company"
+		texturefile = "gfx//interface//missions//flavor_universalis//Kapsalon//fu_white_horse_company.dds"
+	}
+	spriteType = {  
+		name = "fu_golden_arts"
+		texturefile = "gfx//interface//missions//flavor_universalis//Kapsalon//fu_golden_arts.dds"
+	}
 }
