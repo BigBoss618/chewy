@@ -22,6 +22,7 @@ fu_dithmarschen_missions_1 = {
 			army_size = BRE 
 		}
 		effect = {
+			add_war_exhaustion = -2 
 			weser_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -72,6 +73,17 @@ fu_dithmarschen_missions_1 = {
 				}
 			}
 			hidden_effect = {
+				if = {
+					limit = {
+						44 = { 
+							owner = { 
+								is_subject_of = ROOT 
+								government = republic
+							}
+						}
+					}
+					add_government_reform = peasants_republic
+				}
 				if = {
 					limit = { 
 						44 = {
@@ -687,7 +699,7 @@ fu_dithmarschen_missions_3 = {
 		required_missions = { dtt_eider_estuary } 
 		position = 5 
 		trigger = {
-			capital_scope = { development = 28 } 
+			capital_scope = { development = 26 } 
 		}
 		effect = {
 			add_stability_or_adm_power = yes 
