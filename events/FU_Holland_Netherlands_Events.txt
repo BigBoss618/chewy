@@ -1274,11 +1274,17 @@ country_event = { #Our friends in the West
 		}
 		picardy_area = {
 			type = all 
-			owner = { alliance_with = ROOT } 
+			OR = {
+				owner = { alliance_with = ROOT }
+				country_or_non_sovereign_subject_holds = ROOT  
+			}
 		}
 		normandy_area = {
 			type = all 
-			owner = { alliance_with = ROOT } 
+			OR = {
+				owner = { alliance_with = ROOT }
+				country_or_non_sovereign_subject_holds = ROOT  
+			} 
 		}
 	}
 	

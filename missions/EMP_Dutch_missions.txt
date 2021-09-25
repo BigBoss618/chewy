@@ -990,6 +990,24 @@ fu_netherlands_missions_2 = {
 					desc = until_we_fall_below_50_absolutism_desc
 				}
 			}
+			hidden_effect = { 
+				if = { 
+					limit = { absolutism = 50 }
+					add_country_modifier = { 
+						name = ned_absolutist_regents_modifier
+						duration = -1 
+						desc = until_we_fall_below_50_absolutism_desc
+					}
+				}
+				else = { 
+					add_country_modifier = {
+						name = ned_republicanism_true_freedom_modifier
+						duration = -1 
+						desc = until_we_cross_50_absolutism_desc
+					}
+					add_dip_power = 100 
+				}
+			}
 		}
 	}
 

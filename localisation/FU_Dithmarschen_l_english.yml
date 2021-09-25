@@ -5,21 +5,21 @@
  #|Missions made by Big Boss for Flavor Universalis|#
  
  dtt_otterndorf_strife_title: "Otterndorf Strife"
- dtt_otterndorf_strife_desc: " "
+ dtt_otterndorf_strife_desc: "Our relations with the neighboring city of Hamburg have always stood on unsteady ground. Recent provocations in our border are enough of a reason for us to invade and liberate their people!"
  dtt_bishop_needle_title: "The Bishop's Needle"
- dtt_bishop_needle_desc: " " 
+ dtt_bishop_needle_desc: "The Bishop of Bremen stands mockingly behind his new line of fortifications. The city may be protected by high walls, however our resolve and discipline will deliver us a final blow against a decayed symbol of religious authority." 
  dtt_land_reclamation_title: "Land Reclamation"
- dtt_land_reclamation_desc: " " 
+ dtt_land_reclamation_desc: "Despite our territory being somewhat marshy, we should nevertheless finance major reconstruction and expansion works to create more living space for our people." 
  dtt_enlist_likedeelers_title: "Enlist the Likedeelers"
- dtt_enlist_likedeelers_desc: " " 
+ dtt_enlist_likedeelers_desc: "Everything is allowed in love and war. Whilst this may not be an absolute argument, we need no more convincing when it comes to enlisting some of the North Seas' most prestigious and notorious privateers. Expanding our naval activities and hiring experienced crews to privateer for us under the black flag is an excellent way to annoy our enemies and enjoy ample coin." 
  
  #2
  dtt_repel_black_guard_title: "Repel the Black Guard" 
- dtt_repel_black_guard_desc: " " 
+ dtt_repel_black_guard_desc: "The Black Guard, a mercenary army hired by the heinous Danish Archking, has been roaming the roads of the northern border of the Empire, looting and slaughtering innocent peasants. As the protector and standard-bearer of the common folk, we must protect them from these brutish mercenaries." 
  dtt_great_peasant_war_title: "Great Peasants War" 
- dtt_great_peasant_war_desc: " "
+ dtt_great_peasant_war_desc: "The time to rattle the status quo of the feudal systems is nigh. Recent uprisings across northern Germany have given the signal that the peasantry is waking up from its nobility-induced slumber. We mustn't back down and demand our voices be heard via any means necessary!"
  dtt_unite_masses_title: "Unite the Masses" 
- dtt_unite_masses_desc: " "
+ dtt_unite_masses_desc: "Since time immemorial, the upper classes have been imposing their rule over the lesser folk. Despite setbacks in our struggle to give the land back to the people, we must remain focused on our important goal, to spread the ideals of a peasant revolution across the far corners of the old continent."
  dtt_means_production_title: "The Means of Production" 
  dtt_means_production_desc: " " 
  #3
@@ -59,7 +59,7 @@
  dtt_more_likely_to_spawn_rev_tt: "We will be more likely to spawn a §RCenter of Revolution§! and gain a unique bonus from it"
  dtt_per_subject_mana_or_1_in_every_category_tt: "\nBased on our number of subjects we gain:"
  dtt_every_manufactory_2_base_production_tt: "Every owned province with a §YManufactory§! will gain §G2§! Base Production"
- dtt_if_murican_dream_tt: "If the '§YAmerican Dream§!' DLC is active:" 
+ dtt_if_murican_dream_tt: "If we complete the mission with §G100§! Prestige and the '§YAmerican Dream§!' or '§YStar & Crescent§!' DLC is active:" 
  dtt_lubeck_direct_ownership_tt: "If we control [45.GetName] directly:"
  dtt_lubeck_owned_by_subject_tt: "\nIf we control [45.GetName] via vassalage:"
  dtt_new_cb_grant_tt: "\n§MGrants access to the 'Break Feudal Chains' Casus Belli§!"
@@ -112,21 +112,21 @@
  #|Events made by Big Boss for Flavor Universalis|#
  
  FU_Dith_Events.1.t: "City of Bremen"
- FU_Dith_Events.1.d: " "
+ FU_Dith_Events.1.d: "The grand city of Bremen has been standing in the Weser area for centuries. Despite its glory and natural wealth, the recent mismanagement and decay displayed by its Archbishop have left the city stranded, yearning to taste the old glories of its better days. After adding the city and its inhabitants to our domain, it is our duty to ensure the city thrives once more!"
  FU_Dith_Events.1.a: "Construct the Weigh House!"
  FU_Dith_Events.1.b: "The Cloth-Traders' guild hall will thrive in the city."
  FU_Dith_Events.1.c: "Expand the city's defences, instead."
  
  FU_Dith_Events.2.t: "[GetYear] - The Year of Blood" 
- FU_Dith_Events.2.d: " "
+ FU_Dith_Events.2.d: "Peasantry mishandling and centuries of misforune under feudal rule are but a few evils, living under the heavy chains of the nobility. And to that, gentlemen, men of hardships and strong arms, we say, no more! Let this day be a declaration of our independence from all the contracts and the binds that the nobles impose on us. No matter how many of their accolades stand against us, we shall have freedom!"
  FU_Dith_Events.2.a: "Drum links, zwei, drei!"
  
  FU_Dith_Events.4.t: "Wulf Isebrand"
- FU_Dith_Events.4.d: " " 
+ FU_Dith_Events.4.d: "One of the most prolific and genius military leaders of our humble army, Isebrand is a valuable addition to our ranks. His interesting way of interpreting battles and quick as well as decisive decision-making skills will prove vital in our struggle to liberate Europe's most mistreated!" 
  FU_Dith_Events.4.a: "A champion to defend the common man!"
  
  FU_Dith_Events.5.t: "The Heated Debate on Peasant Dietary Preferences"
- FU_Dith_Events.5.d: " " 
+ FU_Dith_Events.5.d: "'Yeah, Sebastian, you add too much milk in your cereal, it will become soggy.'\n'Well. Priscilla, some prefer their cereal soggy, you wretched witch!' \n'Men have been beheaded for less, you blasphemer!' \nRecently our social debates have devolved into our citizens arguing about their dietary preferences! Is this a sign of a healthy society or have we grown to comfortable off our own success? Whatever the case may be, the angered individuals cry out to our glorious leader for guidance in such a heated topic of discussion!" 
  FU_Dith_Events.5.a: "Surely, milk must follow the cereal."
  FU_Dith_Events.5.b: "No,milk comes first and aplenty!"
  FU_Dith_Events.5.c: "Whatever the order, we are one people!"

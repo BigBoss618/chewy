@@ -288,13 +288,23 @@ fu_dithmarschen_missions_2 = {
 		required_missions = { dtt_bishop_needle dtt_repel_black_guard dtt_break_wends }
 		position = 3 
 		trigger = {
-			custom_trigger_tooltip = {
-				tooltip = dtt_won_incident_tt
-				OR = {	
-					NOT = { hre_size = 1 } 
-					has_global_flag = gpw_peasants_win_major
-					has_global_flag = gpw_peasants_win_minor 
+			if = { 
+				limit = { hre_size = 1 } 
+				custom_trigger_tooltip = {
+					tooltip = dtt_won_incident_tt
+					OR = {	
+						NOT = { hre_size = 1 } 
+						has_global_flag = gpw_peasants_win_major
+						has_global_flag = gpw_peasants_win_minor 
+					}
 				}
+			}
+			else = { 
+				OR = { 
+					num_of_subjects = 4
+					grown_by_development = 300 
+				}
+				army_size = 50 
 			}
 		}
 		effect = {
@@ -484,6 +494,18 @@ fu_dithmarschen_missions_2 = {
 			custom_tooltip = dtt_if_murican_dream_tt
 			tooltip = { 
 				country_event = { id = usa_dlc.100 } 
+			}
+			hidden_effect = { 
+				if = { 
+					limit = { 
+						prestige = 100
+						OR = {
+							has_dlc = "American Dream"
+							has_dlc = "Star and Crescent"
+						}
+					}
+					country_event = { id = usa_dlc.100 }
+				}
 			}
 		}
 	}
